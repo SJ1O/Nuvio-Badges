@@ -1,8 +1,22 @@
 {
   "groups": [
     {
+      "id": "live",
+      "name": "Live TV",
+      "color": "#00000000",
+      "borderColor": "#00000000",
+      "isExpanded": true
+    },
+    {
       "id": "resolution",
       "name": "Resolution",
+      "color": "#00000000",
+      "borderColor": "#00000000",
+      "isExpanded": true
+    },
+    {
+      "id": "source",
+      "name": "Source",
       "color": "#00000000",
       "borderColor": "#00000000",
       "isExpanded": true
@@ -31,20 +45,6 @@
     {
       "id": "channels",
       "name": "Audio Channels",
-      "color": "#00000000",
-      "borderColor": "#00000000",
-      "isExpanded": true
-    },
-    {
-      "id": "source",
-      "name": "Source",
-      "color": "#00000000",
-      "borderColor": "#00000000",
-      "isExpanded": true
-    },
-    {
-      "id": "live",
-      "name": "Live TV",
       "color": "#00000000",
       "borderColor": "#00000000",
       "isExpanded": true
