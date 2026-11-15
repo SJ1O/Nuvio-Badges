@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="240" viewBox="0 0 300 120">
+<defs>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".30"/><stop offset=".42" stop-color="#b8d7ee" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".045"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".42"/><stop offset=".48" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".78"/><stop offset=".55" stop-color="#d7eaff" stop-opacity=".26"/><stop offset="1" stop-color="#ffffff" stop-opacity=".55"/></linearGradient>
+ <clipPath id="clip"><rect x="5" y="5" width="290" height="110" rx="22"/></clipPath>
+ <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect x="8" y="9" width="284" height="108" rx="23" fill="#000000" opacity=".28" filter="url(#shadow)"/>
+<g clip-path="url(#clip)">
+ <rect x="5" y="5" width="290" height="110" rx="22" fill="#647b91" opacity=".22"/>
+ <rect x="5" y="5" width="290" height="110" rx="22" fill="url(#glass)"/>
+ <image x="17" y="15" width="266" height="90" preserveAspectRatio="xMidYMid meet" href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-HDTV.svg" xlink:href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-HDTV.svg"/>
+ <path d="M5 27 Q5 5 27 5 H273 Q295 5 295 27 V47 Q150 64 5 47Z" fill="url(#shine)" opacity=".62"/>
+ <path d="M12 14 Q150 1 288 14" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="1.5"/>
+ <path d="M9 91 Q150 119 291 91" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
+ <rect x="5.75" y="5.75" width="288.5" height="108.5" rx="21.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+</g>
+</svg>
