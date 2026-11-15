@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="210" viewBox="0 0 360 210">
+<defs>
+ <linearGradient id="body" x1="0" y1="0" x2="0.85" y2="1">
+  <stop offset="0" stop-color="#9bc9e8" stop-opacity=".19"/>
+  <stop offset=".20" stop-color="#172431" stop-opacity=".54"/>
+  <stop offset=".62" stop-color="#080e16" stop-opacity=".76"/>
+  <stop offset="1" stop-color="#1c3445" stop-opacity=".38"/>
+ </linearGradient>
+ <linearGradient id="topGlass" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".20"/>
+  <stop offset=".12" stop-color="#9bc9e8" stop-opacity=".16"/>
+  <stop offset=".52" stop-color="#ffffff" stop-opacity=".035"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+ </linearGradient>
+ <linearGradient id="bevel" x1="0" y1="0" x2="0.8" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+  <stop offset=".16" stop-color="#9bc9e8" stop-opacity=".90"/>
+  <stop offset=".55" stop-color="#ffffff" stop-opacity=".24"/>
+  <stop offset=".82" stop-color="#9bc9e8" stop-opacity=".72"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".80"/>
+ </linearGradient>
+ <linearGradient id="innerEdge" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".30"/>
+  <stop offset=".22" stop-color="#ffffff" stop-opacity=".04"/>
+  <stop offset=".78" stop-color="#9bc9e8" stop-opacity=".05"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".25"/>
+ </linearGradient>
+ <radialGradient id="colorBloom" cx="50%" cy="90%" r="80%">
+  <stop offset="0" stop-color="#9bc9e8" stop-opacity=".27"/>
+  <stop offset=".45" stop-color="#9bc9e8" stop-opacity=".10"/>
+  <stop offset="1" stop-color="#9bc9e8" stop-opacity="0"/>
+ </radialGradient>
+ <filter id="outerGlow" x="-60%" y="-90%" width="220%" height="280%">
+  <feGaussianBlur stdDeviation="13"/>
+ </filter>
+ <filter id="drop" x="-30%" y="-50%" width="160%" height="210%">
+  <feGaussianBlur stdDeviation="8"/>
+ </filter>
+ <clipPath id="tileClip"><rect x="18" y="18" width="324" height="174" rx="31"/></clipPath>
+</defs>
+<!-- soft cast shadow and coloured light outside the glass -->
+<rect x="24" y="29" width="312" height="174" rx="34" fill="#000000" opacity=".78" filter="url(#drop)"/>
+<rect x="18" y="18" width="324" height="174" rx="31" fill="#9bc9e8" opacity=".42" filter="url(#outerGlow)"/>
+<g clip-path="url(#tileClip)">
+ <!-- deep transparent glass body -->
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="#071019" opacity=".72"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#body)"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#colorBloom)"/>
+ <!-- broad curved reflection, not a simple line -->
+ <path d="M18 62 Q18 18 62 18 H298 Q342 18 342 62 L342 88 Q180 115 18 88Z" fill="url(#topGlass)"/>
+ <!-- original vector artwork preserved -->
+ <svg x="38" y="38" width="284" height="134" viewBox="0 0 112 80" preserveAspectRatio="xMidYMid meet">
+ <ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C3.983 2.779 7.167 5.67 8.324 10.57 C8.444 11.331 8.564 12.091 8.688 12.875 C4.993 13.104 1.375 13.244 -2.312 12.875 C-4.625 10.812 -4.625 10.812 -6.312 8.875 C-9.824 8.875 -11.576 9.163 -14.125 11.625 C-15.409 14.057 -15.936 16.161 -16.312 18.875 C-15.632 18.401 -14.951 17.926 -14.25 17.438 C-10.236 15.302 -6.766 14.36 -2.227 15.312 C2.423 16.834 4.985 18.659 7.688 22.875 C9.781 27.061 9.111 32.316 8.688 36.875 C6.411 41.778 3.489 44.429 -1.312 46.875 C-7.75 48.648 -13.371 47.857 -19.312 44.875 C-23.983 41.22 -26.769 36.646 -27.616 30.766 C-27.75 28.501 -27.78 26.268 -27.75 24 C-27.742 23.205 -27.733 22.41 -27.725 21.591 C-27.524 14.615 -26.492 9.257 -21.594 4.047 C-15.273 -1.685 -8.115 -2.756 0 0 Z M-14.312 25.875 C-16.312 28.875 -16.312 28.875 -16.188 32.375 C-15.312 35.875 -15.312 35.875 -13.688 37.875 C-10.197 39.345 -7.921 38.859 -4.312 37.875 C-1.724 35.621 -1.37 34.27 -0.875 30.875 C-1.415 27.175 -2.353 26.095 -5.312 23.875 C-9.108 22.038 -11.078 23.492 -14.312 25.875 Z " fill="#FFFFFF" transform="translate(48.3125,16.125)" />
+<ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C0 15.51 0 31.02 0 47 C-3.63 47 -7.26 47 -11 47 C-11.33 35.12 -11.66 23.24 -12 11 C-14.64 12.65 -17.28 14.3 -20 16 C-20.66 16 -21.32 16 -22 16 C-22.651 12.811 -22.793 10.173 -22 7 C-15.517 -0.746 -10.368 0 0 0 Z " fill="#FFFFFF" transform="translate(91,16)" />
+<ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C3.062 0.312 3.062 0.312 5 1.375 C6.679 4.437 5.749 7.006 5.062 10.312 C3.082 10.972 1.103 11.633 -0.938 12.312 C-3.5 10.125 -3.5 10.125 -5.938 7.312 C-5.833 2.827 -4.671 0.497 0 0 Z " fill="#FFFFFF" transform="translate(64.9375,51.6875)" />
+
+ </svg>
+ <!-- lower internal refraction -->
+ <path d="M26 155 Q180 205 334 155 L334 192 H26Z" fill="#9bc9e8" opacity=".055"/>
+ <!-- thick polished outer bevel and inner glass edge -->
+ <rect x="18.8" y="18.8" width="322.4" height="172.4" rx="30.2" fill="none" stroke="url(#bevel)" stroke-width="3"/>
+ <rect x="23" y="23" width="314" height="164" rx="27" fill="none" stroke="url(#innerEdge)" stroke-width="1.4"/>
+</g>
+</svg>
