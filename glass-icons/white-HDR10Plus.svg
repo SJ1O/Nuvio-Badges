@@ -1,19 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="240" viewBox="0 0 300 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="210" viewBox="0 0 360 210">
 <defs>
- <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".30"/><stop offset=".42" stop-color="#b8d7ee" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".045"/></linearGradient>
- <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".42"/><stop offset=".48" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
- <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".78"/><stop offset=".55" stop-color="#d7eaff" stop-opacity=".26"/><stop offset="1" stop-color="#ffffff" stop-opacity=".55"/></linearGradient>
- <clipPath id="clip"><rect x="5" y="5" width="290" height="110" rx="22"/></clipPath>
- <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feGaussianBlur stdDeviation="3"/></filter>
+ <linearGradient id="body" x1="0" y1="0" x2="0.85" y2="1">
+  <stop offset="0" stop-color="#e8b64f" stop-opacity=".19"/>
+  <stop offset=".20" stop-color="#172431" stop-opacity=".54"/>
+  <stop offset=".62" stop-color="#080e16" stop-opacity=".76"/>
+  <stop offset="1" stop-color="#443018" stop-opacity=".38"/>
+ </linearGradient>
+ <linearGradient id="topGlass" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".20"/>
+  <stop offset=".12" stop-color="#e8b64f" stop-opacity=".16"/>
+  <stop offset=".52" stop-color="#ffffff" stop-opacity=".035"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+ </linearGradient>
+ <linearGradient id="bevel" x1="0" y1="0" x2="0.8" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+  <stop offset=".16" stop-color="#e8b64f" stop-opacity=".90"/>
+  <stop offset=".55" stop-color="#ffffff" stop-opacity=".24"/>
+  <stop offset=".82" stop-color="#e8b64f" stop-opacity=".72"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".80"/>
+ </linearGradient>
+ <linearGradient id="innerEdge" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".30"/>
+  <stop offset=".22" stop-color="#ffffff" stop-opacity=".04"/>
+  <stop offset=".78" stop-color="#e8b64f" stop-opacity=".05"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".25"/>
+ </linearGradient>
+ <radialGradient id="colorBloom" cx="50%" cy="90%" r="80%">
+  <stop offset="0" stop-color="#e8b64f" stop-opacity=".27"/>
+  <stop offset=".45" stop-color="#e8b64f" stop-opacity=".10"/>
+  <stop offset="1" stop-color="#e8b64f" stop-opacity="0"/>
+ </radialGradient>
+ <filter id="outerGlow" x="-60%" y="-90%" width="220%" height="280%">
+  <feGaussianBlur stdDeviation="13"/>
+ </filter>
+ <filter id="drop" x="-30%" y="-50%" width="160%" height="210%">
+  <feGaussianBlur stdDeviation="8"/>
+ </filter>
+ <clipPath id="tileClip"><rect x="18" y="18" width="324" height="174" rx="31"/></clipPath>
 </defs>
-<rect x="8" y="9" width="284" height="108" rx="23" fill="#000000" opacity=".28" filter="url(#shadow)"/>
-<g clip-path="url(#clip)">
- <rect x="5" y="5" width="290" height="110" rx="22" fill="#647b91" opacity=".22"/>
- <rect x="5" y="5" width="290" height="110" rx="22" fill="url(#glass)"/>
- <image x="17" y="15" width="266" height="90" preserveAspectRatio="xMidYMid meet" href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-HDR10Plus.svg" xlink:href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-HDR10Plus.svg"/>
- <path d="M5 27 Q5 5 27 5 H273 Q295 5 295 27 V47 Q150 64 5 47Z" fill="url(#shine)" opacity=".62"/>
- <path d="M12 14 Q150 1 288 14" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="1.5"/>
- <path d="M9 91 Q150 119 291 91" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
- <rect x="5.75" y="5.75" width="288.5" height="108.5" rx="21.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+<!-- soft cast shadow and coloured light outside the glass -->
+<rect x="24" y="29" width="312" height="174" rx="34" fill="#000000" opacity=".78" filter="url(#drop)"/>
+<rect x="18" y="18" width="324" height="174" rx="31" fill="#e8b64f" opacity=".42" filter="url(#outerGlow)"/>
+<g clip-path="url(#tileClip)">
+ <!-- deep transparent glass body -->
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="#071019" opacity=".72"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#body)"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#colorBloom)"/>
+ <!-- broad curved reflection, not a simple line -->
+ <path d="M18 62 Q18 18 62 18 H298 Q342 18 342 62 L342 88 Q180 115 18 88Z" fill="url(#topGlass)"/>
+ <!-- original vector artwork preserved -->
+ <svg x="38" y="38" width="284" height="134" viewBox="0 0 284 134"><image x="12.00" y="42.80" width="260.00" height="48.41" href="data:image/png;base64,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"/></svg>
+ <!-- lower internal refraction -->
+ <path d="M26 155 Q180 205 334 155 L334 192 H26Z" fill="#e8b64f" opacity=".055"/>
+ <!-- thick polished outer bevel and inner glass edge -->
+ <rect x="18.8" y="18.8" width="322.4" height="172.4" rx="30.2" fill="none" stroke="url(#bevel)" stroke-width="3"/>
+ <rect x="23" y="23" width="314" height="164" rx="27" fill="none" stroke="url(#innerEdge)" stroke-width="1.4"/>
 </g>
 </svg>

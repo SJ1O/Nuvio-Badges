@@ -1,19 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="240" viewBox="0 0 300 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="210" viewBox="0 0 360 210">
 <defs>
- <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".30"/><stop offset=".42" stop-color="#b8d7ee" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".045"/></linearGradient>
- <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".42"/><stop offset=".48" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
- <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".78"/><stop offset=".55" stop-color="#d7eaff" stop-opacity=".26"/><stop offset="1" stop-color="#ffffff" stop-opacity=".55"/></linearGradient>
- <clipPath id="clip"><rect x="5" y="5" width="290" height="110" rx="22"/></clipPath>
- <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feGaussianBlur stdDeviation="3"/></filter>
+ <linearGradient id="body" x1="0" y1="0" x2="0.85" y2="1">
+  <stop offset="0" stop-color="#9bc9e8" stop-opacity=".19"/>
+  <stop offset=".20" stop-color="#172431" stop-opacity=".54"/>
+  <stop offset=".62" stop-color="#080e16" stop-opacity=".76"/>
+  <stop offset="1" stop-color="#1c3445" stop-opacity=".38"/>
+ </linearGradient>
+ <linearGradient id="topGlass" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".20"/>
+  <stop offset=".12" stop-color="#9bc9e8" stop-opacity=".16"/>
+  <stop offset=".52" stop-color="#ffffff" stop-opacity=".035"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+ </linearGradient>
+ <linearGradient id="bevel" x1="0" y1="0" x2="0.8" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+  <stop offset=".16" stop-color="#9bc9e8" stop-opacity=".90"/>
+  <stop offset=".55" stop-color="#ffffff" stop-opacity=".24"/>
+  <stop offset=".82" stop-color="#9bc9e8" stop-opacity=".72"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".80"/>
+ </linearGradient>
+ <linearGradient id="innerEdge" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".30"/>
+  <stop offset=".22" stop-color="#ffffff" stop-opacity=".04"/>
+  <stop offset=".78" stop-color="#9bc9e8" stop-opacity=".05"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity=".25"/>
+ </linearGradient>
+ <radialGradient id="colorBloom" cx="50%" cy="90%" r="80%">
+  <stop offset="0" stop-color="#9bc9e8" stop-opacity=".27"/>
+  <stop offset=".45" stop-color="#9bc9e8" stop-opacity=".10"/>
+  <stop offset="1" stop-color="#9bc9e8" stop-opacity="0"/>
+ </radialGradient>
+ <filter id="outerGlow" x="-60%" y="-90%" width="220%" height="280%">
+  <feGaussianBlur stdDeviation="13"/>
+ </filter>
+ <filter id="drop" x="-30%" y="-50%" width="160%" height="210%">
+  <feGaussianBlur stdDeviation="8"/>
+ </filter>
+ <clipPath id="tileClip"><rect x="18" y="18" width="324" height="174" rx="31"/></clipPath>
 </defs>
-<rect x="8" y="9" width="284" height="108" rx="23" fill="#000000" opacity=".28" filter="url(#shadow)"/>
-<g clip-path="url(#clip)">
- <rect x="5" y="5" width="290" height="110" rx="22" fill="#647b91" opacity=".22"/>
- <rect x="5" y="5" width="290" height="110" rx="22" fill="url(#glass)"/>
- <image x="17" y="15" width="266" height="90" preserveAspectRatio="xMidYMid meet" href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-51.svg" xlink:href="https://cdn.jsdelivr.net/gh/sweatycab/nuvio-minimalist-badges@main/badges/white-51.svg"/>
- <path d="M5 27 Q5 5 27 5 H273 Q295 5 295 27 V47 Q150 64 5 47Z" fill="url(#shine)" opacity=".62"/>
- <path d="M12 14 Q150 1 288 14" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="1.5"/>
- <path d="M9 91 Q150 119 291 91" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
- <rect x="5.75" y="5.75" width="288.5" height="108.5" rx="21.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+<!-- soft cast shadow and coloured light outside the glass -->
+<rect x="24" y="29" width="312" height="174" rx="34" fill="#000000" opacity=".78" filter="url(#drop)"/>
+<rect x="18" y="18" width="324" height="174" rx="31" fill="#9bc9e8" opacity=".42" filter="url(#outerGlow)"/>
+<g clip-path="url(#tileClip)">
+ <!-- deep transparent glass body -->
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="#071019" opacity=".72"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#body)"/>
+ <rect x="18" y="18" width="324" height="174" rx="31" fill="url(#colorBloom)"/>
+ <!-- broad curved reflection, not a simple line -->
+ <path d="M18 62 Q18 18 62 18 H298 Q342 18 342 62 L342 88 Q180 115 18 88Z" fill="url(#topGlass)"/>
+ <!-- original vector artwork preserved -->
+ <svg x="38" y="38" width="284" height="134" viewBox="0 0 112 80" preserveAspectRatio="xMidYMid meet">
+ <ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C9.57 0 19.14 0 29 0 C29 2.64 29 5.28 29 8 C22.4 8 15.8 8 9 8 C9 10.97 9 13.94 9 17 C10.32 16.34 11.64 15.68 13 15 C18.247 14.514 21.576 15.115 26 18 C30.214 21.933 31.808 24.915 32.129 30.695 C31.817 36.269 30.092 39.859 26.25 43.875 C20.627 47.552 15.767 48.501 9.211 47.539 C4.534 46.399 1.102 44.386 -1.938 40.562 C-3 38 -3 38 -3 33 C0.3 33 3.6 33 7 33 C7.66 34.32 8.32 35.64 9 37 C12.622 38.006 14.918 38.444 18.438 37 C20.783 33.997 20.396 31.697 20 28 C18 25 18 25 15.125 24.188 C11.731 23.984 10.906 24.503 8 26 C4.282 26.196 1.54 26.18 -2 25 C-2.32 4.64 -2.32 4.64 0 0 Z " fill="#FFFFFF" transform="translate(25,16)" />
+<ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C0 15.51 0 31.02 0 47 C-3.3 47 -6.6 47 -10 47 C-10.33 35.12 -10.66 23.24 -11 11 C-13.64 12.65 -16.28 14.3 -19 16 C-19.66 16 -20.32 16 -21 16 C-21.623 12.495 -21.824 9.483 -21 6 C-14.829 -0.708 -9.111 0 0 0 Z " fill="#FFFFFF" transform="translate(90,16)" />
+<ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M0 0 C1.938 1.688 1.938 1.688 3 4 C2.923 7.175 2.399 8.542 0.312 10.938 C-2 12 -2 12 -5.188 11.25 C-8 10 -8 10 -9 9 C-9.456 3.759 -9.456 3.759 -7.875 1.125 C-5.089 -0.547 -3.18 -0.464 0 0 Z " fill="#FFFFFF" transform="translate(68,52)" />
+
+ </svg>
+ <!-- lower internal refraction -->
+ <path d="M26 155 Q180 205 334 155 L334 192 H26Z" fill="#9bc9e8" opacity=".055"/>
+ <!-- thick polished outer bevel and inner glass edge -->
+ <rect x="18.8" y="18.8" width="322.4" height="172.4" rx="30.2" fill="none" stroke="url(#bevel)" stroke-width="3"/>
+ <rect x="23" y="23" width="314" height="164" rx="27" fill="none" stroke="url(#innerEdge)" stroke-width="1.4"/>
 </g>
 </svg>
